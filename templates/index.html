@@ -1,0 +1,128 @@
+{% include 'header_and_footer/header.html' %}
+<style>
+    .background-image {
+        position: relative;
+        background-image: url("../media/school.png");
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .logo-container {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        background-image: url("../media/logo.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .text-container {
+        position: absolute;
+        bottom: 60px;
+        left: 220px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 20px;
+        color: white;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .full-width-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background: linear-gradient(135deg, #0056b3, #58a);
+        color: white;
+        padding: 60px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        border-radius: 40px;
+    }
+
+    .full-width-banner::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, transparent 50%, rgba(255, 255, 255, 0.3) 80%);
+        transform: rotate(25deg);
+        animation: rotate 15s linear infinite;
+    }
+
+    .full-width-banner .banner-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .full-width-banner h2 {
+        margin-bottom: 20px;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .full-width-banner p {
+        font-size: 1.3em;
+        max-width: 800px;
+        margin: auto;
+    }
+</style>
+<div class="container">
+    <div class="background-image">
+        <div class="logo-container"></div>
+        <div class="text-container">
+            <h3>СОШ № 7</h3>
+            <p>Средняя общеобразовательная школа Бишкека № 7</p>
+        </div>
+    </div>
+    <div>
+        <h2 class="text-center my-3">Новости</h2>
+        <div class="row row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="../media/img.png" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Заголовок новости</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+
+
+                    <img src="../media/img.png" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Заголовок новости</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="../media/img.png" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Заголовок новости</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-width-banner my-4">
+        <div class="banner-content">
+            <h2>Эффективное развитие профильной и предпрофильной модели школы</h2>
+            <p>Создание условий для выбора разноуровнего обучения в ходе модернизации и информатизации
+                образовательно-воспитательного процесса</p>
+        </div>
+    </div>
+
+</div>
+
+{% include 'header_and_footer/footer.html' %}

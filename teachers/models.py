@@ -7,8 +7,9 @@ class Teacher(models.Model):
         ('Директор', 'Директор')
     )
     name = models.CharField(max_length=100, verbose_name='Введите ФИО')
+    category = models.CharField(max_length=100, choices=CATEGORY, verbose_name='Выберите категорию')
     profession = models.CharField(max_length=100, verbose_name='Введите полное название должности')
-    photo = models.ImageField(upload_to='teachers/')
+    photo = models.ImageField(blank=True, upload_to='teachers/', verbose_name='Фото')
 
     def __str__(self):
         return self.name

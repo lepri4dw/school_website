@@ -1,0 +1,49 @@
+{% include 'header_and_footer/header.html' %}
+<style>
+    .nav-pills .nav-link {
+        border-radius: 0.25rem;
+    }
+
+    .card {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+</style>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="nav flex-column nav-pills">
+                <a href="{% url 'teachers' %}" class="nav-link {% if not category %}active{% endif %}">Все
+                    сотрудники</a>
+                <a href="{% url 'teachers_by_category' category='Директор' %}"
+                   class="nav-link {% if category == 'Директор' %}active{% endif %}">Директор</a>
+                <a href="{% url 'teachers_by_category' category='Администрация' %}"
+                   class="nav-link {% if category == 'Администрация' %}active{% endif %}">Администрация</a>
+                <a href="{% url 'teachers_by_category' category='Учитель' %}"
+                   class="nav-link {% if category == 'Учитель' %}active{% endif %}">Учителя</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for teacher in teachers %}
+                    <div class="col mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="
+                                    {% if teacher.photo %}{{ teacher.photo.url }}{% else %}../../media/empty.png{% endif %}"
+                                 class="card-img-top" alt="{{ teacher.name }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ teacher.name }}</h5>
+                                <p class="card-text">{{ teacher.profession }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'header_and_footer/footer.html' %}
+

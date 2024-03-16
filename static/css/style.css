@@ -1,0 +1,30 @@
+.background-image {
+    position: relative;
+    background-image: url("....//media/school.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh; /* Высота экрана */
+}
+
+.logo-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px; /* Размер круга */
+    height: 200px;
+    border-radius: 50%; /* Круглая форма */
+    background-image: url("../../media/logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.text-container {
+    position: absolute;
+    bottom: 0;
+    left: 220px; /* Отступ слева */
+    background: rgba(0, 0, 0, 0.7); /* Темный фон с прозрачностью */
+    color: white; /* Белый текст */
+    padding: 20px;
+    width: 300px; /* Ширина прямоугольника */
+    /* Высота автоматически определится содержимым */
+}
