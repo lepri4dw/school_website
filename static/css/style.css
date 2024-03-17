@@ -1,18 +1,37 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
 .background-image {
     position: relative;
-    background-image: url("....//media/school.png");
+    background-image: url("../../media/school.png");
     background-repeat: no-repeat;
     width: 100%;
-    height: 80vh; /* Высота экрана */
+    height: 80vh;
 }
 
 .logo-container {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200px; /* Размер круга */
+    bottom: 15px;
+    left: 15px;
+    width: 200px;
     height: 200px;
-    border-radius: 50%; /* Круглая форма */
+    border-radius: 50%;
+    background-color: aliceblue;
     background-image: url("../../media/logo.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,11 +39,55 @@
 
 .text-container {
     position: absolute;
-    bottom: 0;
-    left: 220px; /* Отступ слева */
-    background: rgba(0, 0, 0, 0.7); /* Темный фон с прозрачностью */
-    color: white; /* Белый текст */
+    bottom: 60px;
+    left: 220px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    color: white;
     padding: 20px;
-    width: 300px; /* Ширина прямоугольника */
-    /* Высота автоматически определится содержимым */
+    font-size: 20px;
+}
+
+.full-width-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: linear-gradient(135deg, #0056b3, #58a);
+    color: white;
+    padding: 60px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+.full-width-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, transparent 50%, rgba(255, 255, 255, 0.3) 80%);
+    transform: rotate(25deg);
+    animation: rotate 15s linear infinite;
+}
+
+.full-width-banner .banner-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.full-width-banner h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.full-width-banner p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: auto;
 }
