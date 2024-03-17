@@ -10,31 +10,19 @@
     <div>
         <h2 class="text-center my-3">Новости</h2>
         <div class="row row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card">
-                    <img src="../media/img.png" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Заголовок новости</h5>
-                    </div>
+            {% for post in posts %}
+                <div class="col">
+                    <a href="/posts/{{ post.id }}" class="d-block text-dark card">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img-top" style="max-height: 240px">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="post-description">{{ post.description }}</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../media/img.png" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Заголовок новости</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../media/img.png" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Заголовок новости</h5>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
+        <a href="/posts" class="d-block text-center my-3">Все новости</a>
     </div>
     <div class="full-width-banner my-4">
         <div class="banner-content">

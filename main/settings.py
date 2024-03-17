@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'main',
     'teachers',
     'applications',
+    'posts',
     'bootstrap5'
 ]
 

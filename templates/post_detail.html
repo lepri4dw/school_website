@@ -1,0 +1,10 @@
+{% include 'header_and_footer/header.html' %}
+<div class="container my-4">
+    <h1 class="text-center">{{ post.title }}</h1>
+    <div style="float: left; margin-right: 20px;">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 300px; height: auto;">
+    </div>
+    <p>{{ post.description }}</p>
+    <p>Опубликовано: {{ post.created_at }}</p>
+</div>
+{% include 'header_and_footer/footer.html' %}
