@@ -24,6 +24,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ teacher.name }}</h5>
                                 <p class="card-text">{{ teacher.profession }}</p>
+                                <a href="{% url 'teacher_detail' teacher.pk %}" class="btn btn-primary">Подробнее</a>
                             </div>
                         </div>
                     </div>

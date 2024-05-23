@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Teacher(models.Model):
     CATEGORY = (
         ('Учитель', 'Учитель'),
@@ -10,6 +11,7 @@ class Teacher(models.Model):
     category = models.CharField(max_length=100, choices=CATEGORY, verbose_name='Выберите категорию')
     profession = models.CharField(max_length=100, verbose_name='Введите полное название должности')
     photo = models.ImageField(blank=True, upload_to='teachers/', verbose_name='Фото')
+    schedule = models.TextField(verbose_name='Введите график работы')
 
     def __str__(self):
         return self.name
